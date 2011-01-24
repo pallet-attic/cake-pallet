@@ -10,7 +10,6 @@
         (:require pallet.main)
         [options (concat (:pallet *opts*)
                          (rest (drop-while #(not= "--" %) *command-line-args*)))]
-        (prn options)
         (do
           (try
             (require 'pallet.main)
