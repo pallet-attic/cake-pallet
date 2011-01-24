@@ -10,10 +10,11 @@
         (:require pallet.main)
         [options (concat (:pallet *opts*)
                          (rest (drop-while #(not= "--" %) *command-line-args*)))]
+        (prn options)
         (do
           (try
             (require 'pallet.main)
-            (apply pallet.main/pallet-task "-project-options" (pr-str *project*) options)
+            (pallet.main/pallet-task (concat ["-project-options" (pr-str *project*)] options))
             (catch java.io.FileNotFoundException e
               (println "Error loading pallet: " (.getMessage e))
               (println "You need to have pallet as a project dependency")
