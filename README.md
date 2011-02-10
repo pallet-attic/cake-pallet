@@ -3,17 +3,17 @@ cake-pallet
 cake-pallet is a plugin to invoke pallet tasks using cake. Pallet is used as
 a library, so Pallet tasks are written as Clojure code you can keep in your
 project. By using cake to launch pallet, you can invoke your Pallet scripts
-without having to start a repl or write custom scripts. 
+without having to start a repl or write custom scripts.
 
 Obtaining
 ---------
-In your project file, add 
+In your project file, add
 
-	[cake-pallet "0.4.0-SNAPSHOT"] 
+	[cake-pallet "0.4.0-beta-1"]
 
-to your :dev-dependencies, and add 
+to your :dev-dependencies, and add
 
-	:tasks [cake-pallet.tasks] 
+	:tasks [cake-pallet.tasks]
 
 to your project (Keep in mind, your deployment tasks will presumably require
 pallet, so you should also add a dependency for that). Then run
