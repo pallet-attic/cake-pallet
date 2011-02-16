@@ -11,7 +11,8 @@
         (:require pallet.main)
         [options (concat
                   (:pallet *opts*)
-                  (rest (drop-while #(not= "--" %) *command-line-args*)))]
+                  (rest (drop-while #(not= "--" %) *command-line-args*))
+                  (rest (drop-while #(not= "--" %) *args*)))]
         (let [parsed-options (mapcat
                               #(vector
                                 (str "-" (name (key %))) (str/join "," (val %)))
