@@ -13,13 +13,8 @@
                   (:pallet *opts*)
                   (rest (drop-while #(not= "--" %) *command-line-args*))
                   (rest (drop-while #(not= "--" %) *args*)))]
-        (let [parsed-options (mapcat
-                              #(vector
-                                (str "-" (name (key %))) (str/join "," (val %)))
-                              (dissoc *opts* :pallet))
-              args (concat
+        (let [args (concat
                     ["-project-options" (pr-str *project*)]
-                    parsed-options
                     options)]
           (try
             (require 'pallet.main)
