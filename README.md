@@ -9,7 +9,7 @@ Obtaining
 ---------
 In your project file, add
 
-	[cake-pallet "0.4.2"]
+	[cake-pallet "0.5.0"]
 
 to your :dev-dependencies, and add
 
